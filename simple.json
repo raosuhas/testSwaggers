@@ -210,27 +210,6 @@
           "x-ms-client-flatten": true,
           "description": "The manifest for the custom resource provider",
           "properties": {
-            "actions": {
-              "type": "array",
-              "description": "A list of actions that the custom resource provider implements.",
-              "items": {
-                "$ref": "#/definitions/CustomRPActionRouteDefinition"
-              }
-            },
-            "resourceTypes": {
-              "type": "array",
-              "description": "A list of resource types that the custom resource provider implements.",
-              "items": {
-                "$ref": "#/definitions/CustomRPResourceTypeRouteDefinition"
-              }
-            },
-            "validations": {
-              "type": "array",
-              "description": "A list of validations to run on the custom resource provider's requests.",
-              "items": {
-                "$ref": "#/definitions/CustomRPValidations"
-              }
-            },
             "provisioningState": {
               "type": "string",
               "description": "The provisioning state of the resource provider.",
@@ -241,6 +220,7 @@
               },
               "enum": [
                 "Accepted",
+                "Creating",
                 "Deleting",
                 "Running",
                 "Succeeded",
