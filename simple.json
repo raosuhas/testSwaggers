@@ -132,22 +132,6 @@
         }
     },
     "definitions": {
-      "ListByCustomRPManifest": {
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/CustomRPManifest"
-            },
-            "description": "The array of custom resource provider manifests."
-          },
-          "nextLink": {
-            "type": "string",
-            "description": "The URL to use for getting the next set of results."
-          }
-        },
-        "description": "List of custom resource providers."
-      },
       "CustomRPRouteDefinition": {
         "description": "A route definition that defines an action or resource that can be interacted with through the custom resource provider.",
         "required": [
@@ -266,23 +250,6 @@
           }
         ],
         "description": "A manifest file that defines the custom resource provider resources."
-      },
-      "ResourceProviderOperationList": {
-        "description": "Results of the request to list operations.",
-        "readOnly": true,
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/ResourceProviderOperation"
-            },
-            "description": "List of operations supported by this resource provider."
-          },
-          "nextLink": {
-            "type": "string",
-            "description": "The URL to use for getting the next set of results."
-          }
-        }
       },
       "ResourceProviderOperation": {
         "description": "Supported operations of this resource provider.",
