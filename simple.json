@@ -99,7 +99,49 @@
           "application/json"
         ]
       }
-    }
+    },
+    "get": {
+        "tags": [
+          "CustomResourceProvider"
+        ],
+        "operationId": "CustomResourceProvider_Get",
+        "x-ms-examples": {
+          "Get a custom resource provider": {
+          }
+        },
+        "description": "Gets the custom resource provider manifest.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceProviderNameParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK response definition with the existing resource."
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ]
+      }
   },
   "definitions": {
     "ListByCustomRPManifest": {
