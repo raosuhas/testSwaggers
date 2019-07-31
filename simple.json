@@ -92,45 +92,64 @@
           "consumes": [
             "application/json"
           ]
-        }
-      },
-      "get": {
-          "tags": [
-            "CustomResourceProvider"
-          ],
-          "operationId": "CustomResourceProvider_Get",
-          "x-ms-examples": {
-            "Get a custom resource provider": {
-            }
-          },
-          "description": "Gets the custom resource provider manifest.",
-          "parameters": [
-            {
-              "$ref": "#/parameters/SubscriptionIdParameter"
+        },
+        "get": {
+            "tags": [
+              "CustomResourceProvider"
+            ],
+            "operationId": "CustomResourceProvider_CreateOrUpdate",
+            "x-ms-examples": {
+              "Create or update the custom resource provider": {
+              }
             },
-            {
-              "$ref": "#/parameters/ResourceGroupNameParameter"
+            "x-ms-long-running-operation": true,
+            "description": "Creates or updates the custom resource provider.",
+            "parameters": [
+              {
+                "$ref": "#/parameters/SubscriptionIdParameter"
+              },
+              {
+                "$ref": "#/parameters/ResourceGroupNameParameter"
+              },
+              {
+                "$ref": "#/parameters/ResourceProviderNameParameter"
+              },
+              {
+                "$ref": "#/parameters/ApiVersionParameter"
+              },
+              {
+                "name": "resourceProvider",
+                "in": "body",
+                "required": true,
+                "schema": {
+                  "$ref": "#/definitions/CustomRPManifest"
+                },
+                "description": "The parameters required to create or update a custom resource provider definition."
+              }
+            ],
+            "responses": {
+              "201": {
+                "description": "Created response definition. Resource has been created",
+                "schema": {
+                  "$ref": "#/definitions/CustomRPManifest"
+                }
+              },
+              "200": {
+                "description": "OK response definition. Resource already exists and the changes have been accepted",
+                "schema": {
+                  "$ref": "#/definitions/CustomRPManifest"
+                }
+              }
             },
-            {
-              "$ref": "#/parameters/ResourceProviderNameParameter"
-            },
-            {
-              "$ref": "#/parameters/ApiVersionParameter"
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "OK response definition with the existing resource."
-            }
-          },
-          "produces": [
-            "application/json"
-          ],
-          "consumes": [
-            "application/json"
-          ]
-        }
-    },
+            "produces": [
+              "application/json"
+            ],
+            "consumes": [
+              "application/json"
+            ]
+          }
+    }
+},
     "definitions": {
       "CustomRPRouteDefinition": {
         "description": "A route definition that defines an action or resource that can be interacted with through the custom resource provider.",
