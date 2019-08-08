@@ -97,9 +97,9 @@
             "tags": [
               "CustomResourceProvider"
             ],
-            "operationId": "CustomResourceProvider_CreateOrUpdate",
+            "operationId": "CustomResourceProvider_Get",
             "x-ms-examples": {
-              "Create or update the custom resource provider": {
+              "Get the custom resource provider": {
               }
             },
             "x-ms-long-running-operation": true,
