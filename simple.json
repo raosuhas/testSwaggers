@@ -3,7 +3,7 @@
     "info": {
       "version": "2018-09-01-preview",
       "title": "customproviders",
-      "description": "Allows extension of ARM control plane with custom resource providers.",
+      "description": "Allows extension of ARM control plane with custom resource providers. Test",
       "x-ms-code-generation-settings": {
         "name": "customprovidersClient"
       }
